@@ -1,6 +1,7 @@
 require 'ym4r/google_maps/api_key'
 require 'open-uri'
 require 'rexml/document'
+require 'cgi'
 
 module Ym4r
   module GoogleMaps
@@ -18,7 +19,7 @@ module Ym4r
 	  def self.get(request,options = {})
 	    api_key = options[:key]
 	    output =  options[:output] || "kml"
-	    url = "http://maps.google.com/maps/geo?q=#{URI.encode(request)}&key=#{api_key}&output=#{output}"
+	    url = "http://maps.google.com/maps/geo?q=#{CGI::escape(request)}&key=#{api_key}&output=#{output}"
 
 	    res = open(url).read
 
