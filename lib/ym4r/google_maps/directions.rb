@@ -46,9 +46,9 @@ module Ym4r
         data_status.nil? ? "" : data_status.text,
         data_start_address.nil? ? "" : data_start_address.text,
         data_end_address.nil? ? "" : data_end_address.text,
-        data_duration_value.nil? ? "" : data_duration_value.text,
+        data_duration_value.nil? ? "" : data_duration_value.text.to_i,
         data_duration_text.nil? ? "" : data_duration_text.text,
-        data_distance_value.nil? ? "" : data_distance_value.text,
+        data_distance_value.nil? ? "" : data_distance_value.text.to_i,
         data_distance_text.nil? ? "" : data_distance_text.text
       )
 	  end
