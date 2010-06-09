@@ -37,10 +37,10 @@ module Ym4r
       data_status = data['.//status']
       data_start_address = data['.//start_address']
       data_end_address = data['.//end_address']
-      data_duration_value = data['.//duration/value']
-      data_duration_text = data['.//duration/text']
-      data_distance_value = data['.//distance/value']
-      data_distance_text = data['.//distance/text']
+      data_duration_value = data['.//route/leg/duration/value']
+      data_duration_text = data['.//route/leg/duration/text']
+      data_distance_value = data['.//route/leg/distance/value']
+      data_distance_text = data['.//route/leg/distance/text']
 
       Directions::Direction.new(
         data_status.nil? ? "" : data_status.text,
