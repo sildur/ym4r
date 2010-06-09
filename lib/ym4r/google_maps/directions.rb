@@ -6,20 +6,18 @@ module Ym4r
   module GoogleMaps
 	module Directions
 
-	  GEO_SUCCESS = 200
-	  GEO_MISSING_ADDRESS = 601
-	  GEO_UNKNOWN_ADDRESS = 602
-	  GEO_UNAVAILABLE_ADDRESS = 603
-	  GEO_BAD_KEY = 610
-	  GEO_TOO_MANY_QUERIES = 620
-	  GEO_SERVER_ERROR = 500
+	  DIR_SUCCESS = 'OK'
+    DIR_ZERO_RESULTS = 'ZERO_RESULTS'
+    DIR_TOO_MANY_QUERIES = 'OVER_QUERY_LIMIT'
+    DIR_REQUEST_DENIED = 'REQUEST_DENIED'
+    DIR_INVALID_REQUEST = 'INVALID_REQUEST'
 
     # Travel modes
     TRAVEL_MODE_DRIVING = 'driving'
     TRAVEL_MODE_WALKING = 'walking'
     TRAVEL_MODE_BICYCLING = 'bicycling'
 	  
-	  #Gets directions by querying the Google Maps Geocoding service with the +request+ string. Options can be Google's TLD (com by default), travel mode (see Travel modes)
+	  #Gets directions by querying the Google Maps Directions service with the +request+ string. Options can be Google's TLD (com by default), travel mode (see Travel modes)
 	  def self.get(origin, destination, options = {})
       tld = options[:tld] || 'com'
       params = Hash.new
